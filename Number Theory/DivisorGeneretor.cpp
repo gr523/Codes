@@ -2,8 +2,8 @@
 
 using namespace std;
 
-#define SIZE_N 1000
-#define SIZE_P 1000
+#define SIZE_N 10000000
+#define SIZE_P 10000000
 
 bool flag[SIZE_N+5];
 int primes[SIZE_P+5];
