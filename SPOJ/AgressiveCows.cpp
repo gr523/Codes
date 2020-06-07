@@ -1,4 +1,3 @@
-// #include "bits.h"
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -17,9 +16,9 @@ bool check(long long *arr,int n,long long mid,int cow){
 
 long long bs(long long *arr,int n,int cow){
 	long long high=arr[n-1]-arr[0],
-		low=1,mid;
+		low=1,mid,ans;
 	while(low<high){
-		mid=low+(high-low+1)/2;
+		mid=(high+low+1)/2;
 		// cout<<"low="<<low<<" high="<<high<<" mid="<<mid<<"\n";
 		if(check(arr,n,mid,cow))
 			low=mid;
