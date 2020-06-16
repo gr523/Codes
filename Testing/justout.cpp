@@ -2,13 +2,28 @@
 #define ll long long 
 using namespace std;
 int main(){
-	freopen("Input.txt","r",stdin); freopen("Output.txt","w",stdout);
-	ll s,x=4;
-	ll arr[1000000],n=0;
-	while(cin>>s) arr[n++]=s;
+	int t;cin>>t;
+	while(t--){
+		ll n;cin>>n;
+		ll arr[n+1]{},ans[n+1]{},ind=1;
+		for(int i=1;i<=n;i++) cin>>arr[i];
 	
-	for(int i=0;i<n;++i){
-		s=arr[i]^x;
-		cout<<s<<"\n";
+		ans[0]=arr[1];
+		ll s=0;
+		bool f;
+		for(int i=2;i<n;++i){
+			ll tk=(fabs(arr[i]-arr[i+1])+fabs(arr[i]-arr[i-1])),
+			   ntk=fabs(arr[i+1]-arr[i-1]);
+			
+			if(tk>ntk){
+				ans[ind++]=arr[i];
+			}	
+		}
+
+		ans[ind++]=arr[n];
+
+		cout<<ind<<"\n";
+		for(int i=0;i<ind;i++) cout<<ans[i]<<" "; 
+		cout<<"\n";
 	}
 }
