@@ -3,23 +3,20 @@
 using namespace std;
 
 int n,cnt=0;
-string arr,s;
+string s;
 
-void subset(int i){
+void subset(int i,string arr){
 	if(i==n) {
 		cout<<arr<<endl;
 		return;
 	}
-	subset(i+1);
-	arr+=s[i];
-	subset(i+1);  	
-	arr.pop_back();
+	subset(i+1,arr);
+	subset(i+1,arr+s[i]);  	
 }
 
 
 int main(){
-	freopen("Output.txt","w",stdout);
-	s="abc";
+	s="ABC";
 	n=s.length();
-	subset(0);
+	subset(0,"");
 }
