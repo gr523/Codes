@@ -127,4 +127,4 @@ function cleanadframe(){
     for(var i=0;i<500;i+=50){
         setTimeout(function(){cleanclutter();},i);
     }
-};
+};w
