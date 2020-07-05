@@ -1,42 +1,45 @@
 #include <bits/stdc++.h>
+#define ll long long 
 using namespace std;
 
-string s[51];
-bool visited[100][100],f;
-int dx[]={0,0,1,-1},n,m,
-	dy[]={1,-1,0,0},
-    counter[]={1,0,3,2};
-
-
-bool valid(int i,int j,char x){
-	if(i<0 || j<0 || i>=n || j>=m)
-		return 0;
-	return s[i][j]==x;
-}
-
-void dfs(int ix,int iy,char now,int move=0){
-	visited[ix][iy]=1;
-	for(int i=0;i<4;++i){
-		int x=ix+dx[i],y=iy+dy[i];
-		if(!valid(x,y,now)) continue;
-		if(visited[x][y] && i!=counter[move]){
-			f=1;
-			return;
-		}
-		if(!visited[x][y])
-			dfs(x,y,now,i);
-	}
-}
-
-
 int main(){
-	cin>>n>>m;
-	for(int i=0;i<n;i++) cin>>s[i];
-	for(int i=0;i<n&&!f;i++){
-		for(int j=0;j<m&&!f;j++){
-			if(!visited[i][j])
-				dfs(i,j,s[i][j]);
-		}
-	}
-	cout<<(f?"Yes\n":"No\n");	
+    int t;cin>>t;
+    while(t--){
+        int n;cin>>n;
+        ll arr[n];
+        for(int i=0;i<n;i++) cin>>arr[i];
+        int neg=0,pos=0;        
+        for(int i=0;i<n-1;i++){
+            if(arr[i+1]-arr[i]>0)
+                pos++;
+            else if(arr[i+1]-arr[i]<0)
+                neg++;
+            else pos++,neg++;
+        }
+        if(pos>neg){
+            for(int i=0;i<n-1&&pos>neg;++i){
+                if(arr[i+1]-arr[i]>0){
+/*                    if(i>0){
+                        if(arr[i]-arr[i-1]>0 && -arr[i]-arr[i-1]<0)
+                            pos-=2;                
+                    } else pos--;
+*/                    arr[i]=-arr[i];
+                      pos--;i++;
+                }
+            }
+        } else if(pos<neg){
+            for(int i=0;i<n-1&&neg>pos;++i){
+                if(arr[i+1]-arr[i]<0){
+/*                    if(i>0){
+                        if(arr[i]-arr[i-1]<0 && -arr[i]-arr[i-1]>0)
+                            neg-=2;                
+                    } else neg--;
+*/                    arr[i]=-arr[i];neg--,i++;
+                }
+            }        
+        }
+
+        for(int i=0;i<n;i++)cout<<arr[i]<<" ";
+        cout<<"\n"; 
+    }
 }

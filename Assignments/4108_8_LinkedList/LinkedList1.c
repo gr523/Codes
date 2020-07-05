@@ -1,11 +1,9 @@
-#include <bits/stdc++.h>
-#define ll long long 
-using namespace std;
+#include <stdio.h>
+#include <stdlib.h>
 
 struct node{
 	struct node* next;
 	int value;
-	node(){ value=-10;next=0; }
 }*root;
 
 
@@ -23,19 +21,18 @@ void insert(int value){
 
 void showAll(){
 	struct node *cur=root;
-	while(cur) printf("%d ",cur->value),cur=cur->next;
+	while(cur=cur->next) printf("%d ",cur->value);
 }
 
-void edit(int value,int del=0){
+void edit(int value,int del){
 	int newvalue; 
 	if(!del) scanf("%d",&newvalue);
 
-	struct node *cur=root->next,*prev;		
-	while(cur){
+	struct node *cur=root,*prev;		
+	while(cur=cur->next){
 		if(cur->value==value)
 			break;
 		prev=cur;
-		cur=cur->next;
 	}
 	
 	if(!cur) {
@@ -45,7 +42,7 @@ void edit(int value,int del=0){
 
 	if(del){
 		prev->next=cur->next;
-		delete cur;
+		free(cur);
 	} else {
 		cur->value=newvalue;
 	}
@@ -53,7 +50,6 @@ void edit(int value,int del=0){
 
 
 int main(){
-	freopen("Input.txt","r",stdin); freopen("Output.txt","w",stdout);
 	int n;
 	root=(struct node*)malloc(sizeof(struct node));
 
@@ -63,6 +59,7 @@ int main(){
 	insert(2);
 	insert(10);
 	insert(100);
+	insert(321);
 	insert(2313);
 	edit(100,1);
 	showAll();
