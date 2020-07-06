@@ -2,44 +2,22 @@
 #define ll long long 
 using namespace std;
 
-int main(){
-    int t;cin>>t;
-    while(t--){
-        int n;cin>>n;
-        ll arr[n];
-        for(int i=0;i<n;i++) cin>>arr[i];
-        int neg=0,pos=0;        
-        for(int i=0;i<n-1;i++){
-            if(arr[i+1]-arr[i]>0)
-                pos++;
-            else if(arr[i+1]-arr[i]<0)
-                neg++;
-            else pos++,neg++;
-        }
-        if(pos>neg){
-            for(int i=0;i<n-1&&pos>neg;++i){
-                if(arr[i+1]-arr[i]>0){
-/*                    if(i>0){
-                        if(arr[i]-arr[i-1]>0 && -arr[i]-arr[i-1]<0)
-                            pos-=2;                
-                    } else pos--;
-*/                    arr[i]=-arr[i];
-                      pos--;i++;
-                }
-            }
-        } else if(pos<neg){
-            for(int i=0;i<n-1&&neg>pos;++i){
-                if(arr[i+1]-arr[i]<0){
-/*                    if(i>0){
-                        if(arr[i]-arr[i-1]<0 && -arr[i]-arr[i-1]>0)
-                            neg-=2;                
-                    } else neg--;
-*/                    arr[i]=-arr[i];neg--,i++;
-                }
-            }        
-        }
 
-        for(int i=0;i<n;i++)cout<<arr[i]<<" ";
-        cout<<"\n"; 
+int main(){
+    int t,T=1;cin>>t;
+    while(t--){
+        pair<pair<int,int>,string>arr[10];
+        int tmp,mx=-1;
+        string stmp;
+        for(int i=0;i<10;++i){
+            cin>>stmp>>tmp;
+            arr[i]={{tmp,i},stmp};
+            mx=max(mx,tmp);
+        }
+        sort(arr,arr+10);
+        cout<<"Case #"<<T++<<":\n";
+        for(auto i:arr)
+            if(i.first.first==mx)
+                cout<<i.second<<"\n"; 
     }
 }
