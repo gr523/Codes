@@ -1,7 +1,1 @@
-2 5 
-5 2 
-2 5 7 3 
-7 5 2 
-Index 5 Out of Bounds
-2 5 7 
-5 2 
+Usage: file1 file2
