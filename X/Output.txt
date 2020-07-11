@@ -1,1 +1,1 @@
-Usage: file1 file2
+Usage : exePath filename

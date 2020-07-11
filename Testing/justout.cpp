@@ -4,11 +4,13 @@ using namespace std;
 
 int main(){
     FILE *fp;
+    fp=fopen("file","r+");
+    int k=7;
 
-    if(!(fp=fopen("file","r"))){
-        cout<<"problem"<<"\n";
-        return 0;
-    }
-    cout<<"NO PROBLEMO"<<"\n";
+
+    fseek(fp,10,SEEK_SET);
+    cout<<ftell(fp)<<"\n";
+    
+    // fputs("evil",fp);
     fclose(fp);
 }

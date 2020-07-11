@@ -35,9 +35,10 @@ int main(int argc, char **argv){
         }
         i++;
     }
-    printf("\n");
 
-    if(same) printf("The files are same.\n");
+    if(same) printf("The files are same.");
+
+    printf("\n");
 
     fclose(file1),fclose(file2);
 }

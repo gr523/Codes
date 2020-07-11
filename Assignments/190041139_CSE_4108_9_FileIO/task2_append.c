@@ -30,7 +30,6 @@ void write(int append){
     char text[1000];
     while(1){
         fgets(text,1000,stdin);
-        int x=strlen(text);
         if(text[0]=='\n') break;
         fputs(text,fw);
     }
@@ -40,11 +39,11 @@ void write(int append){
 
 
 
-int main(int argc,char **argvm){
+int main(int argc,char **args){
 
-    argv=argvm;
+    argv=args;
     if(argc != 2){
-        printf("Usage: exePath sourcecode filename\n");
+        printf("Usage: exePath filename\n");
         return 0;
     }
     printf("Which mode?\n1.Write to file\n2.Read from file\n3.Append to file\nEnter choice: ");
