@@ -1,4 +1,6 @@
-a='123'
-b=int(a)
+import math,sys
 
-print('first')
+sys.stdout = open("/home/fahim/Codes/X/Output.txt","w")
+
+
+print('Hello')

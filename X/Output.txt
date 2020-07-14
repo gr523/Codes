@@ -1,1 +1,45 @@
-Usage : exePath filename
+What to you want to do?
+1.Create Club
+2.Delete Club
+3.View Club info
+4.Swap Clubs
+Choice : Enter Name : Enter year of Formation : Enter yearly revrevenue : Enter Position : What to you want to do?
+1.Create Club
+2.Delete Club
+3.View Club info
+4.Swap Clubs
+Choice : Enter Name : Enter year of Formation : Enter yearly revrevenue : Enter Position : What to you want to do?
+1.Create Club
+2.Delete Club
+3.View Club info
+4.Swap Clubs
+Choice : Enter Name : Enter year of Formation : Enter yearly revrevenue : Enter Position : What to you want to do?
+1.Create Club
+2.Delete Club
+3.View Club info
+4.Swap Clubs
+Choice : --------------------
+RM
+1234
+120
+--------------------
+SSS
+133899
+84033
+--------------------
+Barcelona
+1899
+440
+--------------------
+What to you want to do?
+1.Create Club
+2.Delete Club
+3.View Club info
+4.Swap Clubs
+Choice : Enter two postions to swap : Invalid position
+What to you want to do?
+1.Create Club
+2.Delete Club
+3.View Club info
+4.Swap Clubs
+Choice : 

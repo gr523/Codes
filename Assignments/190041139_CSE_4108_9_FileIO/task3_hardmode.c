@@ -40,7 +40,7 @@ void write(int append){
 void edit(){
     FILE* fp;
 
-    if(!(fp=fopen(argv[1],"r+"))) err
+    if(!(fp=fopen(argv[1],"r+"))) nofile
     fseek(fp,0,SEEK_END);
     int end=ftell(fp);
 

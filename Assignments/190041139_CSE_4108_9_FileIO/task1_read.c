@@ -5,7 +5,7 @@ int main(int argc,char **argv){
     FILE *fp,*fw;
 
     if(argc != 2){
-        printf("Usage: exePath sourcecode filename\n");
+        printf("Usage: exePath filename\n");
         return 0;
     }
 
