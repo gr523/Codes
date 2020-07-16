@@ -1,6 +1,6 @@
 struct Player{    
-    char name[50];
-    int age,rating,salary,position;
+    char name[50],position[50];
+    int age,rating,salary;
     struct Player *next;
 };
 
