@@ -1,22 +1,3 @@
+190041131
 1
-Barcelona
-1992 232 1
-1
-SSS 
-1232 566 1
-1
-Real Madrid
-1555 787 1
-5
-Lionel Messi
-33
-213
-231
-Left Wing
-Barcelona
-4 1 3
-6
-Lionel Messi
-Barcelona
-3
-231
+0

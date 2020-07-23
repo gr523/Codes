@@ -31,11 +31,7 @@ void gcdsum(){
 }
 
 
-int main(){
-	#ifdef localhost
-		freopen("Input.txt","r",stdin); freopen("Output.txt","w",stdout);
-	#endif
-	
+int main(){	
 	initphi();
 	gcdsum();
 	ll n;
