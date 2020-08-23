@@ -6,7 +6,7 @@ struct node{
     int value;
 }*root,*end;
 
-int list_size=0;
+int list_size=1;
 
 
 void showAll(){
@@ -32,7 +32,7 @@ void showAll_reverse(){
 
 
 void insert_front(int index,int value){
-    if(index>list_size+1) {
+    if(index>list_size) {
         printf("Index Out of Bounds\n");
         return;
     }
@@ -40,7 +40,7 @@ void insert_front(int index,int value){
     struct node *cur=root,*prevNode;
     struct node *tmp=(struct node*)malloc(sizeof(struct node));
     tmp->value=value;
-    while(cur!=end && index--) {
+    while(index--) {
         cur=cur->next;
     }
     prevNode=cur->prev;
@@ -51,7 +51,7 @@ void insert_front(int index,int value){
 }
 
 void insert_back(int index,int value){
-    if(index>list_size+1) {
+    if(index>list_size) {
         printf("Index Out of Bounds\n");
         return;
     }
@@ -59,7 +59,7 @@ void insert_back(int index,int value){
     struct node *cur=end,*prevNode;
     struct node *tmp=(struct node*)malloc(sizeof(struct node));
     tmp->value=value;
-    while(cur!=root && index--) {
+    while(index--) {
         cur=cur->prev;
     }
     prevNode=cur->next;
@@ -67,6 +67,40 @@ void insert_back(int index,int value){
     tmp->prev=cur;
     tmp->next=prevNode;
     cur->next=tmp;
+}
+
+
+void del_front(int index){
+    struct node *cur=root,*prevNode;        
+    if(index>=list_size) {
+        printf("Index %d Out of Bounds\n",index);
+        return;
+    }
+    list_size--;
+    while(index--) {
+        cur=cur->next;
+    }
+
+    prevNode=cur->prev;
+    prevNode->next=cur->next;
+    cur->next->prev=prevNode;
+    free(cur);
+}
+
+void del_back(int index){
+    struct node *cur=end,*prevNode;        
+    if(index>=list_size) {
+        printf("Index %d Out of Bounds\n",index);
+        return;
+    }
+    list_size--;
+    while(index--) {
+        cur=cur->prev;
+    }
+
+    prevNode=cur->next;
+    prevNode->prev=cur->prev;
+    cur->prev->next=prevNode;
 }
 
 

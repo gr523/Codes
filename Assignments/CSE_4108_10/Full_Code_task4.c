@@ -17,6 +17,7 @@ struct Clubs{
     struct Player *player;
 }*root;
 
+int list_size=1;
 
 void insert_club(){
     struct Clubs *tmp=pmalloc(Clubs);
@@ -34,14 +35,15 @@ void insert_club(){
     int index;
     scanf("%d\n",&index); 
 
-    struct Clubs *cur=root,*prev=root;
-    while(cur && index--) {
-        prev=cur;
-        cur=cur->next;
-    }
-    if(index>0) {
+    if(index>list_size) {
         printf("Index Out of Bounds\n");
         return;
+    }
+
+    struct Clubs *cur=root,*prev=root;
+    while(index--) {
+        prev=cur;
+        cur=cur->next;
     }
     prev->next=tmp;
     tmp->next=cur;
@@ -95,10 +97,8 @@ void del_player(){
     if(!root->next) {printf("List Empty\n");return;}    
 
     char clubname[50],playername[50];
-    printf("Enter Player Name : ");
-    scanf("%[^\n]\n",playername); 
-    printf("Enter Current Club : ");
-    scanf("%[^\n]\n",clubname);
+    printf("Enter Player Name : "); scanf("%[^\n]\n",playername); 
+    printf("Enter Current Club : "); scanf("%[^\n]\n",clubname);
 
     struct Clubs *cur=root->next;
     while(cur){

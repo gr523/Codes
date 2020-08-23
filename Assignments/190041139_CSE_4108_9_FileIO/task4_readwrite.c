@@ -4,8 +4,8 @@ int main()
 {
     FILE *fp,*fw;
 
-    if(!(fp=fopen("hello.exe","rb"))) err
-    if(!(fw=fopen("test.exe","wb"))) err 
+    if(!(fp=fopen("Program","rb"))) err
+    if(!(fw=fopen("test","wb"))) err 
 
 
     for(int i=fgetc(fp);i!=EOF;i=fgetc(fp)) fputc(i,fw); 

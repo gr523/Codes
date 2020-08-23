@@ -44,3 +44,34 @@ int main(){
         }
     }
 }
+
+
+/*
+1
+Barcelona FC
+1992
+100
+1
+1
+Real Madrid
+1989
+189
+2
+5
+Lionel Messi
+33
+1200
+22
+Center Forward
+Barcelona FC
+5
+Cristiano Ronaldo
+35
+1171
+45
+Left Wing
+Real Madrid
+4 1 2
+3
+0
+*/
