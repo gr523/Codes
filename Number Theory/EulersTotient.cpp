@@ -21,9 +21,6 @@ ll calcphi(ll n){
 
 	
 int main(){
-	#ifdef localhost
-		freopen("Input.txt","r",stdin); freopen("Output.txt","w",stdout);
-	#endif
 
 	ll n;
 	while(cin>>n) cout<<calcphi(n)<<"\n";

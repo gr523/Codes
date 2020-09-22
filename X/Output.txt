@@ -1,8 +1,1 @@
-Case 1:
-No
-No
-No
-Yes
-No
-Case 2:
-Yes
+12

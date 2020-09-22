@@ -12,7 +12,6 @@ bool check(){
     return sums>=s;
 }
 
-
 ll bs(){
     lo=1,ans=1,hi=st/s;
     while(lo<=hi){

@@ -37,7 +37,6 @@ ll countdivisors(ll n){
 
 
 int main(){
-	freopen("Input.txt","r",stdin); freopen("Output.txt","w",stdout);
 	sieve();
 	ll n;
 	while(cin>>n){

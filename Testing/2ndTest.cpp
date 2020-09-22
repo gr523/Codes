@@ -1,13 +1,10 @@
 #include <bits/stdc++.h>
 #define ll long long 
+#define ld long double
 using namespace std;
-#define done(x) {cout<<x<<"\n";continue;} 
-
-int ans;
-#define f(a,b) (a>b?a/=b:b/=a);(a>b?a%=b:b%=a);(a>b?ans=a:ans=b);
 
 int main(){
-    int a=3,b=5;
-    f(a,b);
-    cout<<ans<<"\n"; 
+    ld n=64.0000;
+    ld a=(ll)powf(n,1.0/3);
+    cout<<a<<"\n";
 }

@@ -54,7 +54,6 @@ ll countdivisors(ll n,ll m){
 
 
 int main(){
-	freopen("Input.txt","r",stdin); freopen("Output.txt","w",stdout);
 	sieve();
 	int t,T=1;cin>>t;
 	while(t--){

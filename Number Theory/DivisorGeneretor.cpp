@@ -2,8 +2,8 @@
 
 using namespace std;
 
-#define SIZE_N 10000000
-#define SIZE_P 10000000
+#define SIZE_N 1000000
+#define SIZE_P 1000000
 
 bool flag[SIZE_N+5];
 int primes[SIZE_P+5];
@@ -83,7 +83,6 @@ void Generate(int cur,int num,int x=0)
 
 int main()
 {
-  freopen("Input.txt","r",stdin); freopen("Output.txt","w",stdout); 
   int total=seive();
   int n,i;
 
