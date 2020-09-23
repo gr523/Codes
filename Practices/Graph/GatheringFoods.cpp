@@ -8,7 +8,6 @@ bool visited[12][12];
 pair<int,int>mp[30];
 int dx[]={0,0,-1,1},
     dy[]={1,-1,0,0};
-
 int bfs(int si,int sj,char x){
     bool visited[12][12]{};
     queue<pair<int,int>>q;
