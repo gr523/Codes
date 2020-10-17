@@ -1,6 +1,5 @@
 #include <stdio.h>
 
-
 int n,m,k;
 
 int binarysearch(int *arr){
