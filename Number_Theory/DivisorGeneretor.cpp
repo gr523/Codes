@@ -29,7 +29,7 @@ int seive()
 }
 
 int store_primes[100],freq_primes[100], store_divisor[10000], Total_Prime, ans;
-//Very Much Faster Divisor Function…………………………………………
+
 void divisor(int N)
 {
   int i,val,count;

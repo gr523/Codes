@@ -1,53 +1,28 @@
-#include <bits/stdc++.h>
-#define ll long long 
-using namespace std;
-int pr=0,pb=0;
-bool red=1;
-
-void s(int r,int b){
-    int m=1;
-    while(r>0 || b>0){
-        if(m&1){
-            if(red && b>0){
-                b--;
-                pb++;
-                red=0;
-            } else if(!red && r>0){
-                r--;
-                pb++;
-                red=1;
-            } else if(red && r>0){
-                r--;
-                red=1;
-            } else if(!red && b>0){
-                b--;
-                red=0;
-            }
-        } else {
-            if(red && r>0){
-                r--;
-                pr++;
-                red=1;
-            } else if(!red && b>0){
-                b--;
-                pr++;
-                red=0;
-            } else if(!red && r>0){
-                r--;
-                red=1;
-            } else if(red && b>0){
-                b--;
-                red=0;
-            }
-        }
-        m++;
-    }
-}
+#include <stdio.h>
+#include <math.h>
+#define ll long long
+#define findn(s) (-1+sqrt(1+24*s))/6
+#define cardsneeded(n) n*(n+1) + (n*(n-1))/2
 
 int main(){
-    int r,b;
-    cin>>r>>b;
-    red=0;
-    s(r,b-1);
-    cout<<pr<<" "<<pb<<"\n";
+    ll t=1e9,mx=-1;
+    // scanf("%d",&t);
+    for(ll i=1e8;i<t;i++) {
+        ll cards=i; 
+        // scanf("%lld",&cards);
+        ll n=findn(cards),ans=0;
+        while(n>0){
+            ans++;
+            cards-=cardsneeded(n);
+            n=findn(cards);
+        }
+        if(ans>mx) mx=ans;
+    }
+    printf("%lld\n",mx);
 }
+
+/*
+5
+3 14 15 24
+1000000000
+*/

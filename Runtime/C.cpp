@@ -1,37 +1,24 @@
 #include <bits/stdc++.h>
 #define ll long long 
+#define done(x) {cout<<x<<"\n";continue;} 
 using namespace std;
-
-ll n,x,y,dif,d;
-
-ll calcd(){
-    for(int i=1;i<dif;++i){
-        if(dif%i==0){
-            if(dif/i+1<=n)
-                return i;
-        }
-    }
-    return dif;
-}
-
-#define work(d,cond)\
-    while(n>0 && cond){cout<<now<<" "; now+=d; n--;}
 
 int main(){
     int t;cin>>t;
     while(t--){
-        cin>>n>>x>>y;
-        dif=y-x;
-        d=calcd();
-        ll now=x;
-        work(d,now<=y)
-
-        now=x-d;
-        work(-d,now>=1)
-
-        now=y+d;
-        work(d,1)
-        
-        cout<<"\n";
+        ll n; cin>>n;
+        ll l,r,ans,count;
+        if(n==2) done("2\n1 2")
+        if(n==3) done("2\n1 3\n2 2")
+        ans = ceil((n/2+1)+2)/2;
+        cout<<ans<<"\n";
+        cout<<n<<" "<<n-2<<"\n";
+        n--;
+        cout<<n<<" "<<n<<"\n";
+        while(n>=4){
+            cout<<n<<" "<<n-2<<"\n";
+            n--;
+        }
+        cout<<1<<" "<<n<<"\n";
     }
 }

@@ -2,7 +2,6 @@
 #define ll long long 
 using namespace std;
 
-#define equalbutnotreally(x,y) (a.x==b.x && a.y > b.y)
 
 struct data{
     string name;
@@ -17,6 +16,7 @@ int main(){
         student[i].total=student[i].ml+student[i].ds+student[i].net;
     }
 
+    #define equalbutnotreally(x,y) (a.x==b.x && a.y > b.y)    
     sort(student,student+n,[](auto a,auto b){
         if(a.total>b.total)
             return (bool)1;
@@ -28,3 +28,4 @@ int main(){
         cout<<i+1<<" "<<student[i].name<<"\n";
     }
 }
+
