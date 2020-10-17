@@ -16,7 +16,6 @@ int binarysearch(int *arr){
     return 0;
 }
 
-
 int main(){
     scanf("%d%d%d",&n,&m,&k);
     
