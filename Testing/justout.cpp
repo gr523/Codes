@@ -1,28 +1,16 @@
-#include <stdio.h>
-#include <math.h>
-#define ll long long
-#define findn(s) (-1+sqrt(1+24*s))/6
-#define cardsneeded(n) n*(n+1) + (n*(n-1))/2
+#include <bits/stdc++.h>
+#define ll long long 
+#define done(x) {cout<<x<<"\n";return 0;} 
+using namespace std;
 
 int main(){
-    ll t=1e9,mx=-1;
-    // scanf("%d",&t);
-    for(ll i=1e8;i<t;i++) {
-        ll cards=i; 
-        // scanf("%lld",&cards);
-        ll n=findn(cards),ans=0;
-        while(n>0){
-            ans++;
-            cards-=cardsneeded(n);
-            n=findn(cards);
-        }
-        if(ans>mx) mx=ans;
+    string s;
+    cin >> s;
+    int n=s.length();
+    bool pal=1;
+    for(int i=0;i<n/2 && pal;++i){
+        if(s[i]!=s[n-i-1]) pal=0;
     }
-    printf("%lld\n",mx);
+    if(pal) done(0)
+    done("R "<<n-1)
 }
-
-/*
-5
-3 14 15 24
-1000000000
-*/
