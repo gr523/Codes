@@ -17,8 +17,6 @@ import keyboard
 
 
 
-
-
 keyboard.remap_key('a', 'n+y+i+p')
 keyboard.remap_key('l', 'n+y+9+p')
 

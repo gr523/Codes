@@ -3,23 +3,23 @@
 using namespace std;
 
 int main(){
-    ll a;
-    string b,ans;
-    cin>>a>>b;
-    ll cur=a+1,k,i,d;
-    while(1){
-        k=cur,i=1;
-        ans="";
-        while(k>0){
-            d=k%10;
-            if(d==4 || d==7)
-                ans+=d+'0';
-            k/=10;
+    int t;cin>>t;
+    while(t--){
+        ll n,x=-1; cin >>n;
+        map<ll,ll>freq;
+        ll arr[n],ans=1e6;
+        for(int i=0;i<n;++i){
+            cin>>arr[i];
+            if(x==arr[i]) continue;
+            x=arr[i];
+            freq[x]++;
         }
-        reverse(ans.begin(),ans.end());
-        if(ans==b)
-            break;
-        cur++;
+
+        for(int i=0;i<n;i++){
+            ans=min(ans,freq[arr[i]]-(i==n));
+        } 
+
+
+        cout<<ans+1<<"\n";
     }
-    cout<<cur<<"\n";
 }
