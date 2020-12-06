@@ -4,3 +4,7 @@ test.cpp
 Program
 stdc++*
 *.out
+*.o
+*.exe
+project1/
+the-right-angle/
