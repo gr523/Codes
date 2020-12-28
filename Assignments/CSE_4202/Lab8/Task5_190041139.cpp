@@ -7,6 +7,9 @@ struct Set{
     int size=0;
     int arr[MX];
     void insert(int value){
+        for(int i=0;i<size;++i){
+            if(arr[i]==value) return;
+        }
         arr[size++]=value;
         sort(arr,arr+size);
     }

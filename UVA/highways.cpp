@@ -1,14 +1,15 @@
 #include <bits/stdc++.h>
 #define ll long long 
 using namespace std;
+#define mx 100001
 
 struct edges{
 	int from,to;
 	double dist;
-} arr[284639];
+} arr[mx];
 
-int parent[760],ln[760];
-pair<int,int>co[760];
+int parent[mx],ln[mx];
+pair<int,int>co[mx];
 vector<pair<int,int>>ans;
 
 int root (int x){

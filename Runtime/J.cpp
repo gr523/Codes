@@ -2,7 +2,7 @@
 #define ll long long 
 using namespace std;
 #define done(x) {cout<<x<<"\n";continue;} 
-
+ 
 struct Bigint {
     string a;
     int sign;
@@ -169,7 +169,7 @@ struct Bigint {
         return a/gcd(a,b);
     }
 };
-
+ 
 int main(){
     int t;cin>>t;
     int a[]={2,2,1,1,1,1,1};
@@ -180,7 +180,7 @@ int main(){
         }
         n-=3;
         Bigint x=n/7;
-        Bigint ans=(Bigint)x*9+3;
+        Bigint ans=x*9+3;
         n-=(x*7);
         string d=n.a;
         reverse(d.begin(),d.end());
@@ -190,4 +190,4 @@ int main(){
         } 
         cout<<ans<<"\n";
     }
-}
+};

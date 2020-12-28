@@ -3,10 +3,9 @@
 using namespace std;
 #define pi pair<int,int>
 
-
 struct Pair{
     int x,y;
-}
+};
 
 int main(){
    Pair a;

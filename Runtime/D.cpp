@@ -1,20 +1,13 @@
 #include <bits/stdc++.h>
 #define ll long long 
 using namespace std;
-
 int main(){
-    int t,T=1;cin>>t;
+    int t;cin>>t;
+    int ans[]={0,1,4,9,6,5,6,9,4,1};
     while(t--){
-        string a; ll b;
-        cin>>a>>b;
-        ll n=a.length(),start=0;
-        if(a[0]=='-') start=1;
-        ll s=0;
-        for(int i=start;i<n;++i){
-            s=s*10+a[i]-'0';
-            s%=b;
-        }
-        cout<<"Case "<<T++<<": ";
-        cout<<(!s?"divisible\n":"not divisible\n");    
+        string s; cin>>s;
+        int n= s.length();
+        int d=s[n-1]-'0';
+        cout<<ans[d]<<"\n";
     }
 }

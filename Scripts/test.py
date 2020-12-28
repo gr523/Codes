@@ -1,23 +1,18 @@
-from sys import stdin
+t = int(input())
 
-first=1
-for c in stdin:
-    c=list(map(int,c.split()))
-    x=list(map(int,input().split()))
-    ans=[]
-    l=len(c)-1
-    for x0 in x:
-        i=l
-        s=0
-        for c0 in c:
-            s=s+c0*x0**i
-            i-=1
-            if i<0:
-                break
-        ans.append(s)
-    for ind,value in enumerate(ans):
-        if ind<len(ans)-1:
-            print(value,end=" ")
-        else:
-            print(value,end="")
-    print("")
+while t>0:
+    t = t - 1
+    n = int(input())
+    if n < 4:
+        print(n)
+    else:
+        n = n - 3
+        p = n//7
+        ans = p*9+3
+        n = n % 7
+        if n > 0:
+            ans = ans+n+1
+        if n >= 2:
+            ans = ans+1
+
+        print(ans)

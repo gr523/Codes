@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 #define MX 1000000
 using namespace std;
-
+//
 struct Vector{
     int arr[MX],size=0;
 

@@ -17,7 +17,7 @@ ll BigMod(ll base,ll power,ll mod){
 	ll result=1;
 	while(power){
 		if(power&1LL)
-			result=mulmod(result,base,mod);
+			result=mulmod((__int128)result,base,mod);
 		base=mulmod(base,base,mod);
 		power>>=1LL;
 	}

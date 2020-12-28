@@ -1,11 +1,19 @@
-#include <bits/stdc++.h>
+#include <stdio.h>
 #define ll long long 
-using namespace std;
+
 int main(){
-    int t;cin>>t;
-    while(t--){
-        ll n;cin>>n;
-        ll m=ceil((-1+sqrt(8*n))/2.0);
-        cout<<m+(m*(m+1)==2*(n+1))<<"\n";
+    int roll,n=0;
+    scanf("%d",&roll);
+    char s[100];
+    while(roll>0){
+        s[n]=roll%10+'0';
+        n++;
+        roll/=10;
+    }
+    for(int i=n-1;i>=0;i--){
+        for(int k=n-1;k>=i;k--){
+            printf("%c",s[k]);
+        }
+        printf("\n");
     }
 }

@@ -16,6 +16,10 @@ struct Map{
             return;
             // not supported
         }
+        for(int i=0;i<size;++i){
+           if(a[keys[i]]==value) return; 
+        }
+// default behaviour of std::map is not updating when same key is       inserted using the insert method ( not by access[ key ] = value )
         keys[size++]=key;
         sort(keys,keys+size);
         a[key]=value;

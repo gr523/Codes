@@ -2,7 +2,6 @@
 #include <vector>
 using namespace std;
 
-
 vector<int> kmp(string &text,string &pattern){
 	
 	int n=pattern.length(),l=text.length(),i=0,j=0,lps[n];

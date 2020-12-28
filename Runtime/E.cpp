@@ -1,34 +1,24 @@
 #include <bits/stdc++.h>
 #define ll long long 
 using namespace std;
-
 int main(){
-    int t;cin>>t;
-    while(t--){
-        ll n;
-        cin>>n;
-        ll arr[n];
-        for(int i=0;i<n;i++) cin>>arr[i];
-        ll i=1,j=n-1,l=arr[0],r=0;
-        bool rm=1;
-        bool moved1=0,moved2=0;
-        ll cr=0,cl=arr[0];
-        ll ans=1;
-        while(1){
-            if(rm){
-                cr=0;
-                while(cr<=cl && j>=i && j!=0) cr+=arr[j--],moved1=1;
-                r+=cr;
-            } else {
-                cl=0;
-                while(cl<=cr && i<=j) cl+=arr[i++],moved2=1;
-                l+=cl;
-            }
-            rm^=1;
-            ans+=moved2+moved1;
-            if(!(moved1+moved2)) break;
-            moved1=moved2=0;
-        }    
-        cout<<ans<<" "<<l<<" "<<r<<"\n";
+    map<ll,ll>lm,rm;
+    int n;cin>>n;
+    ll arr[n+1];
+    for(int i=1;i<=n;i++){
+        cin>>arr[i];
+        if(!lm[arr[i]])
+            lm[arr[i]]=i;
+    } 
+    for(int i=n;i>0;i--){
+        if(!rm[arr[i]])
+            rm[arr[i]]=i;
     }
+    ll ans=-1,i,j;
+    for(int i=1;i<=n;i++){
+        i=lm[arr[i]],j=rm[arr[i]];
+        if(i>0 && j>0)
+            ans=max(j-i,ans);
+    } 
+    cout<<ans<<"\n";
 }
