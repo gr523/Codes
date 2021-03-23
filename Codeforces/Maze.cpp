@@ -15,7 +15,7 @@ void dfs(int ci,int cj){
     for(int i=0;i<4;++i){
         dfs(ci+di[i],cj+dj[i]);
     }
-    if(k)s[ci][cj]='X',k--;
+    if(k>0)s[ci][cj]='X',k--;
 }
 
 

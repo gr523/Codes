@@ -1,10 +1,13 @@
-var txt;
 
 async function paste(input) {
   input = await navigator.clipboard.readText();
 }
 
+var txt;
 
 async function code() {
-  document.querySelector('#text').value = await navigator.clipboard.readText();
-};
+    document.getElementById("sourceCodeTextarea").value= await navigator.clipboard.readText();
+}
+
+navigator.clipboard.readText().then(
+  clipText => document.getElementById("sourceCodeTextarea").value=clipText);

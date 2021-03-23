@@ -17,7 +17,7 @@
 // @run-at       document-start
 // ==/UserScript==
 
-(function () {
+function GetDarkTheme() {
     "use strict";
 
     var colors = {
@@ -38,7 +38,7 @@
         GM_addStyle(`
 /* google calendar logo, see #13 */
 div.logo-plus-button {
-filter: invert(1) hue-rotate(180deg);
+    filter: invert(1) hue-rotate(180deg);
 }`);
         // rest of the google calendar has already been inverted
         // so return
@@ -104,7 +104,7 @@ filter: invert(1) hue-rotate(180deg);
         });
     })();
 
-    (function fixAceEditor() {
+    (function fixceEditor() {
         applyFuncWhenElmLoaded("#editor", function (elm) {
             var monokaiEditorThemeCSS = GM_getResourceText("monokaiEditorTheme"),
                 aceChromeClass = "ace-chrome";
@@ -157,9 +157,10 @@ filter: invert(1) hue-rotate(180deg);
             overrideStyleAttribute(elm, "color", "#004794");
         });
     })();
-})();
+};
 
-(function(){
+
+function CfMod(){
     var txt,cururl=location.href;
     window.addEventListener('load',function(){
         if(cururl.split('problem').length>1) {
@@ -193,11 +194,7 @@ filter: invert(1) hue-rotate(180deg);
 
         }
     });
-})();
+};
 
-function addcssinHead(elm){
-    let x=document.getElementsByTagName("head")[0];
-    x.innerHTML+=`<style>${elm}</style>`;
-}
-
-
+GetDarkTheme();
+CfMod();

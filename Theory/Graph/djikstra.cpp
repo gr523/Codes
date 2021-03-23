@@ -5,24 +5,31 @@ using namespace std;
 
 const int mx=1000;
 
-vector<pi>*adj; 
 
 int d[mx];
 
+struct node {
+    ll V,W;
+    bool operator < (const node &a ) const{
+        return W>a.W;
+    }
+};
+
+vector<node>adj[mx];
+
 void djikstra(int start,int n){
     for(int i=0;i<=n;i++) d[i]=1e9;
-    priority_queue<pi,vector<pi>,greater<pi>>q;
-    q.push({0,start});
+    priority_queue<node>q;
+    q.push({start,0});
     d[start]=0;
-    pi u,v;
+    int u,w,v,tmp;
     while(!q.empty()){
-        u=q.top();
-        q.pop();
-        for(int i=0;i<adj[u.second].size();++i){
-            v=adj[u.second][i];                //adj[u][i]={cost,node}
-            if(d[u.second]+v.first<d[v.second]){
-                d[v.second]=d[u.second]+v.first;  
-                q.push(v);
+        u=q.top().V; w=q.top().W; q.pop();
+        for(auto i:adj[u]){
+            tmp = w + i.W; v=i.V;
+            if(tmp < d[v]){
+                d[v] = tmp;
+                q.push({v,tmp});
             }
         }
     }
@@ -33,16 +40,17 @@ int main(){
     while(t--){
         int n,m,a,b,w;
         cin>>n>>m;
-        vector<pi>arr[n+1];
         while(m--){
             cin>>a>>b>>w;
-            arr[a].emplace_back(w,b);
-            arr[b].emplace_back(w,a);
+            adj[a].push_back({b,w});
+            adj[b].push_back({a,w});
         }
-        adj=arr;
         djikstra(1,n);
         cout<<"Case "<<T++<<": ";
         (d[n]==1e9)?cout<<"Impossible"<<"\n":cout<<d[n]<<"\n";
+        for(int i=0;i<n;i++){
+            adj[i].clear();
+        } 
     }
 }
 
