@@ -1,7 +1,6 @@
 #include <iostream>
 using namespace std;
 int main(){
-	freopen("Output.txt","w",stdout);
 	string s="abc";
 	int n=s.length(),setlen=1<<n;
 	for(int i=0;i<setlen;i++){
