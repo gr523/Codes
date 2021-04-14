@@ -1,3 +1,5 @@
 {
-    "clangd.enabled":true
+    "clangd":{
+        "enabled":1
+    }
 }

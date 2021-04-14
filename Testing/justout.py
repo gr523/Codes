@@ -1,7 +1,11 @@
-from math import ceil,sqrt
+from bisect import *
+a = [1,2,3,4,5,10,23,56,100,156]
 
-for _ in range(int(input())):
-    n=int(input())
-    ans=ceil((-1+sqrt(1+8*n))/2) 
-    print(ans+(ans*(ans+1)/2-n==1))
+a = a*[-1]
+
+v = 55
+
+print(a[bisect(a,v)])
+print(a[bisect_left(a,v)])
+print(a[bisect_right(a,v)])
 

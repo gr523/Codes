@@ -19,7 +19,7 @@ void dfs(int u){
             parent[v]=u; childs++;
             dfs(v);
             low[u]=min(low[u],low[v]);
-            isArtic=isArtic || (d[u]<=low[v] && u!=root);
+            isArtic|=(d[u]<=low[v] && u!=root);
         }
     }
     art+=(isArtic || (u==root && childs>=2));
