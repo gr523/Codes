@@ -5,9 +5,9 @@ bool check(long long *arr,int n,long long mid,int cow){
 	int cows=1,i=0;
 	while(1){
 		long long x=arr[i]+mid;
-		auto value=lower_bound(arr,arr+n,x);
+		auto value=lower_bound(arr+i,arr+n,x);
 		auto pos=distance(arr,value);
-		if(pos>=n) break;
+		if(pos==n) break;
 		cows++;
 		i=pos;
 	}
@@ -15,22 +15,21 @@ bool check(long long *arr,int n,long long mid,int cow){
 }
 
 long long bs(long long *arr,int n,int cow){
-	long long high=arr[n-1]-arr[0],
-		low=1,mid,ans;
-	while(low<high){
-		mid=(high+low+1)/2;
+	long long high=arr[n-1],
+		low=0,mid,ans=0;
+	while(low<=high){
+		mid=(high+low)/2;
 		// cout<<"low="<<low<<" high="<<high<<" mid="<<mid<<"\n";
 		if(check(arr,n,mid,cow))
-			low=mid;
+			low=mid+1,ans=mid;
 		else
 			high=mid-1;
 	}
-	return low;
+	return ans;
 }
 
 
 int main(){
-	freopen("Input.txt","r",stdin); freopen("Output.txt","w",stdout);
 	long long n,cow,ans;
 	int t;cin>>t;
 	while(t--){

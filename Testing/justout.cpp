@@ -1,17 +1,17 @@
 #include <bits/stdc++.h>
 #define ll long long 
 using namespace std;
-
 int main(){
     int t;cin>>t;
     while(t--){
-        ll a,b,c; cin>>a>>b>>c;
-        ll C = powl(10,c-1)+1;
-        a = powl(11,a-1),b=powl(10,b)-1;
-        ll A = ceil(a/(double)C);
-        ll B = ceil(b/(double)C);
-        if(__gcd(A,B)>1) A++;
-        cout<<A*C<<" "<<B*C<<endl;
+        ll n; cin>>n;
+        ll x;
+        bool f=0;
+        for(int i=0;i<n;i++){
+            cin>>x;
+            ll s=sqrt(x);
+            f|=(s*s!=x);
+        } 
+        cout<<(f?"YES\n":"NO\n");	
     }
 }
- 

@@ -12,3 +12,5 @@ Canvas/
 Space-Ranger/
 Codeforce-EasySubmission/
 Runtime/
+shared
+__pycache__
