@@ -15,7 +15,7 @@ def fib(n):
 
 def main():
     # Call function
-    print(fib(4))
+    print(fib(6))
     vs.write_image("tree.png")
     # Save recursion tree to a file
 #     vs.make_animation("fibonacci.gif", delay=1)

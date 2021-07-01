@@ -7,7 +7,7 @@
 
 int main() {
 	
-	freopen("sample_input.txt","r",stdin);
+// 	freopen("sample_input.txt","r",stdin);
 	butterfly(7,'.',' ');
 	printf("Citizen Information Database (maximum 1000 entries) \n");
 	

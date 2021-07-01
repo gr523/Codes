@@ -1,11 +1,16 @@
+botan/
+Nahar/
+OOP/
+revamp/
 ClassLinks/
 Games/
 test.cpp
 Program
-stdc++*
+*.gch
 *.out
 *.o
 *.exe
+*.json
 The_Right_Angle/
 X/
 Canvas/
@@ -13,4 +18,5 @@ Space-Ranger/
 Codeforce-EasySubmission/
 Runtime/
 shared
+Projects/
 __pycache__
